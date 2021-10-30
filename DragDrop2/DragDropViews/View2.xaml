@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="DragDrop2.DragDropViews.View2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DragDrop2.DragDropViews"
+             x:Name="root"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <Border BorderBrush="Blue" BorderThickness="3" >
+        <Canvas x:Name="canvas" 
+                AllowDrop="True" 
+                Background="Transparent" 
+                DragLeave="Canvas_DragLeave"                  
+                DragOver="Canvas_DragOver"
+                Drop="Canvas_Drop">
+            <Rectangle x:Name="blueRectangle" Fill="Blue" Height="100" Width="100" Canvas.Left="50" Canvas.Top="50" 
+                       IsHitTestVisible="{Binding IsChildHitTestVisible, ElementName=root}"
+                       MouseMove="BlueRectangle_MouseMove" />
+        </Canvas>            
+    </Border>
+
+</UserControl>
+ 
